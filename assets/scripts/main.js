@@ -56,7 +56,9 @@ function initializeServiceWorker() {
       const registration = await navigator.serviceWorker.register('./sw.js');
       // B4. TODO - Once the service worker has been successfully registered, console
       //            log that it was successful.
-      console.log('Service worker registered.');
+      if (registration.waiting){
+        console.log('Service worker registered.');
+      }
     }
     catch (error) {
       // B5. TODO - In the event that the service worker registration fails, console
